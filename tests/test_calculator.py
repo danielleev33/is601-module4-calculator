@@ -103,6 +103,27 @@ def test_display_history_with_entries(capsys):
 4. DivideCalculation: 20.0 Divide 4.0 = 5.0"""
     assert captured.out.strip() == expected_output.strip()
 
+def test_clear_command_clears_history(monkeypatch, capsys):
+    import pytest
+    from app.calculator import calculator
+
+    inputs = iter([
+        "add 1 2",
+        "clear",
+        "history",
+        "exit",
+    ])
+
+    monkeypatch.setattr("builtins.input", lambda _prompt="": next(inputs))
+
+    with pytest.raises(SystemExit):
+    	calculator()
+
+    out = capsys.readouterr().out
+    assert "History cleared." in out
+    assert "No calculations performed yet." in out  # becuase you ran history after clean
+
+
 def test_calculator_exit(monkeypatch, capsys):
     """
     Test the calculator function's ability to handle the 'exit' command.

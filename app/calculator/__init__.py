@@ -101,6 +101,10 @@ def calculator() -> None:
             elif command == "history":
                 display_history(history)
                 continue
+            elif command == "clear":
+                history.clear()
+                print("History cleared.\n")
+                continue
             elif command == "exit":
                 print("Exiting calculator. Goodbye!\n")
                 sys.exit(0)  # Exit the program gracefully
