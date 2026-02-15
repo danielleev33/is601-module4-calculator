@@ -1,5 +1,27 @@
 # 📦 Project Setup
 
+# Professional Calculator (Module 4)
+
+A command-line calculator built with OOP, a REPL interface, calculation history, and 100% test coverage enforced in GitHub Actions ## Quick Start
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python main.py
+
+## Commands
+
+| Command | Example | What it does |
+|---|---|---|
+| add | `add 1 2` | Adds two numbers |
+| subtract | `subtract 5 3` | Subtracts the second number from the first |
+| multiply | `multiply 2 4` | Multiplies two numbers |
+| divide | `divide 10 2` | Divides the first number by the second (handles divide-by-zero) |
+| history | `history` | Shows your current session calculation history |
+| clear | `clear` | Clears the session history |
+| help | `help` | Shows available commands and usage |
+| exit | `exit` | Quits the calculator |
+
 ---
 
 # 🧩 1. Install Homebrew (Mac Only)
